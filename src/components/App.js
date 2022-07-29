@@ -2,12 +2,15 @@ import React,{ useState } from "react";
 import { AppContext } from "./context";
 import NavBar from "./NavBar"
 import Container from "./Container";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const App = () => {
     const [cart,setCart] = useState([])
     const [search,setSearch] = useState('')
     const [foundItems,setFoundItems] = useState([])
     const [cost,setCost] = useState(0)
     const [totalItems,setTotalItems] = useState(0)
+
 
     const manageCart = (action,item,quantity) => {
         switch(action){

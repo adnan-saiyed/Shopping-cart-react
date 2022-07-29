@@ -1,15 +1,15 @@
-import React,{ useContext } from "react";
+import React,{ useContext,useState } from "react";
 import { AppContext } from "./context";
 import CartItem from "./CartItem";
+import CartIcon from "./CartIcon";
 const Cart = () => {
-    const {cart,cost,totalItems} = useContext(AppContext)
-    console.log(cart)
+    const {cart,cost} = useContext(AppContext)
+    const [click,setClick] = useState(false)
+    
     return (
-        <div className="cart">
-            <img src="https://pngimg.com/uploads/shopping_cart/shopping_cart_PNG38.png" alt="Cart image" width={80}className="cart-img"></img>
-            <span className="total-indicator">{totalItems}</span>
-            <h3>Total cost: &#8377;{cost}</h3>
-            
+        <div className="cart-container" style={{height: "500px"}}>
+            <CartIcon props = {{click,setClick}}/>
+            <h3>Total cost : &#8377;{cost}</h3>
             {
                 cart.map(item => <CartItem item={item} key={item.id}/>)
             }
