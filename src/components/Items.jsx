@@ -1,10 +1,9 @@
 import React,{useContext} from "react"
 import Card from "./Card"
-import products from './products.json'
 import { AppContext } from "./context"
 const Items = () => {
     const {foundItems} = useContext(AppContext)
-    products.forEach(item => {
+    foundItems.forEach(item => {
         item.isBought = false
     })
     return (

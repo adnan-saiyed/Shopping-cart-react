@@ -5,8 +5,8 @@ import Cart from "./Cart"
 const Container = () => {
     return (
         <div className="items-container">
-            <Items/>
             <Cart/>
+            <Items/>
         </div>
     )
 }
